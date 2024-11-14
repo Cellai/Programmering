@@ -44,7 +44,7 @@ package Programmering;
          assertEquals(10, logik.getAntalTecken(), " Antalet tecken 10");
 
          // Det här testet ovan "kombinera rader och tecken". Den kombinerar två funktioner lägga till rad och tecken.
-         // Samt om båda räknarna (antalRader och antalTecken) uppdateras rätt
+         // Samt om båda räknarna
      }
 
 
