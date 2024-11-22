@@ -44,6 +44,5 @@ public class ReadMain { // Main Klass
         // antal ord och det längsta ordet
     }
 
-
 }
 

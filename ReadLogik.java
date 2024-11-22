@@ -66,5 +66,4 @@ public class ReadLogik { // Logikklassen
     public String getLangstaOrd() {
         return langstaOrd;
     }
-
 }

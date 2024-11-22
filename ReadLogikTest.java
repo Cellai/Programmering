@@ -85,5 +85,4 @@ package Programmering;
          // Kontrollerar att att andra ord returnerar false
          assertFalse(logik.isStop("forsätt"), " 'forsätt' borde returnera false");
      }
-
  }
