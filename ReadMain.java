@@ -5,39 +5,43 @@ import java.util.Scanner;
 public class ReadMain { // Main Klass
 
     public static void main(String[] args) {
+        // Här skapar man en Scanner för att läsa in det användaren matar in
         Scanner scanner = new Scanner(System.in);
-        ReadLogik logik = new ReadLogik(); // Den här raden skapar ett objekt av Readlogik klassen
 
-        String input = ""; // Här sparas det användaren skriver in
+        // Den här raden skapar ett objekt av Readlogik klassen
+        ReadLogik logik = new ReadLogik();
+
 
         System.out.println("Hej skriv in din text, skriv 'stop' för att avsluta ");
 
-        // En while loop som körs, tills man skriver ordet stop
-        while (!input.equals("stop")) {
+        while (true) {
+            String input = scanner.nextLine(); // Läser in det användaren matar in, en rad
 
-            //Läser in en rad från den som skriver
-            input = scanner.nextLine();
-
-
-            //Om det inte är stop så skriver den ut text
-            if (!input.equals("stop")) {
-
-                System.out.println("Hallå du har skrivit: " + input);
-
-                logik.laggTillRad(); //Den här raden ska öka antalet rader
-                logik.laggTillTecken (input.length()); // Den här raden ökar antalet tecken
-
-
-            }
+        // Kontrollera om man skrev ordet "stop", därefter avsluta loopen
+        if (logik.isStop(input)) {
+            break;
         }
 
+            logik.laggTillRad(); //Den här raden ska öka antalet rader
 
-        System.out.println("Ha en fin dag ");
-        System.out.println("Antal rader: " + logik.getAntalRader());
-        System.out.println("Antal tecken: " + logik.getAntalTecken());
+            logik.laggTillTecken (input.length()); // Den här raden ökar antalet tecken
+
+            logik.laggTillOrd(input); // Den här räknar antalet ord och hitta det längsta ordet
+
+        }
+
+        scanner.close(); // Stänger scanner då man inte behöver läsa in något mer
+
+        // Skriv ut resultatet till användaren
+        System.out.println(" Programmet Avlutades, Välkommen åter.");
+        System.out.println("Antal rader: " + logik.getAntalRader()); // Total antal rader
+        System.out.println("Antal tecken: " + logik.getAntalTecken()); // Total antal tecken
+        System.out.println("Antal ord: " + logik.getAntalOrd());       // Total antal ord
+        System.out.println(" Längsta ordet: " + logik.getLangstaOrd()); // Det längsta ordet
 
         //Efter att man skrivit stop så får man ut
-        // Avslutninings medd, + antal rader och antal tecken inkl mellanslag
+        // Avslutninings medd, + antal rader, antal tecken inkl mellanslag,
+        // antal ord och det längsta ordet
     }
 
 
